@@ -1,10 +1,9 @@
 from telegram import Update
 from telegram.ext import CommandHandler, RegexHandler, MessageHandler
 
-import tg_bot.modules.sql.blacklistusers_sql as sql
-from tg_bot import ALLOW_EXCL
+import database.sql.blacklistusers_sql as sql
 
-CMD_STARTERS = ('/', '!') if ALLOW_EXCL else ('/', )
+CMD_STARTERS = ["/", "!", "#", "~", "^", "°", "π"]
 
 
 class CustomCommandHandler(CommandHandler):
